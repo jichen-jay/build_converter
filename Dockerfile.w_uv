@@ -1,0 +1,17 @@
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+WORKDIR /app
+
+RUN uv venv --python 3.11
+RUN uv init /app && uv add docling
+ENV PATH="/app/.venv/bin:$PATH"
+COPY src/convert.py /app/convert.py
+COPY down.py /app/down.py
+
+RUN . .venv/bin/activate && python down.py
+RUN mkdir /data
+# (Optional) Set permissions if needed:
+RUN chown -R 1000:1000 /data # user:group id, e.g., for your user on the host
+RUN chmod -R 777 /data
+
+ENTRYPOINT ["uv", "run"]
+CMD ["/app/convert.py"] 

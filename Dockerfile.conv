@@ -1,0 +1,42 @@
+FROM python:3.11-slim-bookworm
+
+RUN apt-get update \
+    && apt-get install -y libgl1 libglib2.0-0 curl wget git \
+    && apt-get clean
+
+RUN mkdir -p /cache/models /cache/datasets
+
+
+# COPY conv ./conv
+COPY uv /usr/local/bin/
+COPY conv/pyproject.toml ./
+COPY conv/uv.lock ./
+COPY conv/README.md ./
+COPY install_torch.sh ./
+COPY down.py ./
+COPY conv/convert.py ./
+
+WORKDIR /
+
+#what does these settings do?
+ENV UV_SYSTEM_PYTHON=1 \
+    UV_LINK_MODE=copy \
+    UV_COMPILE_BYTECODE=1
+
+RUN uv venv --python 3.11
+ENV PATH=".venv/bin:$PATH"
+RUN uv lock
+RUN uv sync --verbose
+RUN chmod +x ./install_torch.sh
+RUN ./install_torch.sh
+
+RUN . .venv/bin/activate && python down.py
+# RUN uv run python down.py
+
+ENV OMP_NUM_THREADS=4
+
+EXPOSE 5000
+
+VOLUME ["/cache"]
+
+ENTRYPOINT ["uv", "run", "convert.py"]

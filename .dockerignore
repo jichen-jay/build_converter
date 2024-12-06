@@ -1,0 +1,4 @@
+src/.venv
+.github
+.idea
+src/convert.egg-info
