@@ -43,6 +43,25 @@ wheels = [
 ]
 
 [[package]]
+name = "build-converter"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "cython" },
+    { name = "docling" },
+    { name = "pypdfium2" },
+    { name = "setuptools" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cython", specifier = ">=3.0.11" },
+    { name = "docling", specifier = ">=2.8.3" },
+    { name = "pypdfium2", specifier = ">=4.30.0" },
+    { name = "setuptools", specifier = ">=68.0.0" },
+]
+
+[[package]]
 name = "certifi"
 version = "2024.8.30"
 source = { registry = "https://pypi.org/simple" }
@@ -124,23 +143,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44", size = 27697 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335 },
-]
-
-[[package]]
-name = "conv"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "cython" },
-    { name = "docling" },
-    { name = "pypdfium2" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "cython", specifier = ">=3.0.11" },
-    { name = "docling", specifier = ">=2.8.3" },
-    { name = "pypdfium2", specifier = ">=4.30.0" },
 ]
 
 [[package]]
@@ -252,7 +254,7 @@ wheels = [
 
 [[package]]
 name = "docling-core"
-version = "2.7.0"
+version = "2.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jsonref" },
@@ -264,9 +266,9 @@ dependencies = [
     { name = "tabulate" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/01/e0/6b8fa84bf020e5d14221ae6117a8f0a3dbcbd726f24bbdf248f9580152c0/docling_core-2.7.0.tar.gz", hash = "sha256:180a78cfd334b207f4984962f1f7a5d8e6f91734a9c7bd96d78bc9d19135f114", size = 61465 }
+sdist = { url = "https://files.pythonhosted.org/packages/57/5e/6b8050522f0d2eca6d6aeddb0829e453689bb0ee4f9f893cd30961318392/docling_core-2.8.0.tar.gz", hash = "sha256:6ac5cbc6f0abcbdf599c2a4b1a3f7b52fd8baebf3c4ebf94d7b7e2ee061a654e", size = 64512 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8e/07/d837a308577c96a9359927a4b8841856244726d981d3325dc034309213b4/docling_core-2.7.0-py3-none-any.whl", hash = "sha256:45cd51d7803587e779d49458399373eb399a599e52e2356bd358f63bd2559fa8", size = 80301 },
+    { url = "https://files.pythonhosted.org/packages/eb/73/b3c9d6c4b4b9febcf222736fa77a00a8397930aa14169c4166593d43eb5e/docling_core-2.8.0-py3-none-any.whl", hash = "sha256:392aad49e25f5fd1d279410118fbd91d9aaab9dd92d043738d20c10c57193d86", size = 83820 },
 ]
 
 [[package]]
@@ -390,7 +392,7 @@ wheels = [
 
 [[package]]
 name = "huggingface-hub"
-version = "0.26.3"
+version = "0.26.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "filelock" },
@@ -401,9 +403,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4c/66/fa78b1cbcae512a30c2d4c702eba0e3a771ad7b304f85d5df0b339ad82f7/huggingface_hub-0.26.3.tar.gz", hash = "sha256:90e1fe62ffc26757a073aaad618422b899ccf9447c2bba8c902a90bef5b42e1d", size = 375690 }
+sdist = { url = "https://files.pythonhosted.org/packages/51/21/2be5c66f29e798650a3e66bb350dee63bd9ab02cfc3ed7197cf4a905203e/huggingface_hub-0.26.5.tar.gz", hash = "sha256:1008bd18f60bfb65e8dbc0a97249beeeaa8c99d3c2fa649354df9fa5a13ed83b", size = 375951 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/95/9b/3068fb3ae0b498eb66960ca5f4d92a81c91458cacd4dc17bfa6d40ce90fb/huggingface_hub-0.26.3-py3-none-any.whl", hash = "sha256:e66aa99e569c2d5419240a9e553ad07245a5b1300350bfbc5a4945cf7432991b", size = 447570 },
+    { url = "https://files.pythonhosted.org/packages/44/5a/dc6af87c61f89b23439eb95521e4e99862636cfd538ae12fd36be5483e5f/huggingface_hub-0.26.5-py3-none-any.whl", hash = "sha256:fb7386090bbe892072e64b85f7c4479fd2d65eea5f2543327c970d5169e83924", size = 447766 },
 ]
 
 [[package]]

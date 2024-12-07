@@ -2,7 +2,7 @@ FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 WORKDIR /app
 
 RUN uv venv --python 3.11
-RUN uv init /app && uv add docling
+RUN uv init /app && uv pip install --no-cache-dir docling --extra-index-url https://download.pytorch.org/whl/cpu
 ENV PATH="/app/.venv/bin:$PATH"
 COPY src/convert.py /app/convert.py
 COPY down.py /app/down.py
