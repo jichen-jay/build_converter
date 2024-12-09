@@ -50,6 +50,7 @@ dependencies = [
     { name = "cython" },
     { name = "docling" },
     { name = "pypdfium2" },
+    { name = "python-call-graph" },
     { name = "setuptools" },
 ]
 
@@ -58,6 +59,7 @@ requires-dist = [
     { name = "cython", specifier = ">=3.0.11" },
     { name = "docling", specifier = ">=2.8.3" },
     { name = "pypdfium2", specifier = ">=4.30.0" },
+    { name = "python-call-graph", specifier = ">=2.1.2" },
     { name = "setuptools", specifier = ">=68.0.0" },
 ]
 
@@ -1147,6 +1149,12 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/af/a4/d5e062e07fbf070c8982468280bae6418c513628df7881fdf46a5a02fba4/python_bidi-0.6.3-cp313-none-win32.whl", hash = "sha256:f9b8e024eeaddecb4ca189e3199181985fab20c224db9a1f08db48b905c9905a", size = 151261 },
     { url = "https://files.pythonhosted.org/packages/b3/54/0b698ac336192ef5ae5c055ff60fa7d15f2411ce107129d3703323196ef2/python_bidi-0.6.3-cp313-none-win_amd64.whl", hash = "sha256:36b3fb05ef990613a81a23822246eaf6eef29af5182f8d8cdd174be13c92d1cc", size = 156666 },
 ]
+
+[[package]]
+name = "python-call-graph"
+version = "2.1.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/dd/06/cd84a0a7b851d4c07c8281ddae7bf1aed83036f22b753f40090f5075818d/python-call-graph-2.1.2.tar.gz", hash = "sha256:3d644cca9187f6b599b2d50c274585928ab84b7db015d85308bc508be150c9df", size = 470926 }
 
 [[package]]
 name = "python-dateutil"
